@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+}
+.div-table {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.div-button {
+  display: flex;
+  justify-content: end;
+}
+.div-button button {
+  margin: 10px;
+  width: 50%;
+  height: 50px;
+  border: 1px solid #34ade3;
+  background-color: #fff;
+  border-radius: 10px;
+  color: #34ade3;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+.div-button button:hover{
+  background-color: rgba(0,0,0,.04);
+}
+.mat-elevation-z1 {
+  width: 100%;
+}
+h1{
+  font-family: "Poppins", sans-serif;
+}

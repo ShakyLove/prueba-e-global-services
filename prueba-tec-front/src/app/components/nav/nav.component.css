@@ -1,0 +1,80 @@
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(0,0,0,.04);
+}
+.infoHeader {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+.navbar {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  white-space: nowrap;
+  transition: 0.3s;
+  margin-right: 30px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav {
+  margin-left: 20px;
+  display: flex;
+}
+.navbar a:hover {
+  color: #fff;
+}
+.menu {
+  display: none;
+  justify-content: end;
+  width: 50%;
+}
+.menu button {
+  background-color: black;
+  width: 50px;
+  height: 80px;
+  cursor: pointer;
+  border: none;
+}
+.menu button div {
+  border-top: 2px solid #fff;
+  margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+  .nav {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+}
+@media (max-width: 1000px) {
+  .nav {
+    display: none;
+  }
+}

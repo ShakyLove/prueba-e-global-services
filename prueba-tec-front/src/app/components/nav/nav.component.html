@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="infoHeader">
+    <div style="display: flex; align-items: end">
+      <img src="../../../assets/img/dashboard.png" width="50px" alt="">
+    </div>
+    <div class="nav">
+      <nav class="navbar animated fadeIn">
+        <ul>
+          <li>
+            <a [routerLink]="['/dash']">Lista de usuarios</a>
+            <div class="line animated fadeIn"></div>
+          </li>
+          <li>
+            <a (click)="logout()" routerLinkActive="active"
+              >Salir</a
+            >
+            <div class="line animated fadeIn"></div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

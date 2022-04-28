@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+tr.mat-header-row {
+  background-color: #34ade3;
+}
+.mat-header-cell {
+  color: #fff;
+}
+.mat-form-field-label {
+  color: black;
+  font-family: "Poppins", sans-serif;
+}

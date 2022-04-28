@@ -1,0 +1,110 @@
+<mat-dialog-content>
+  <div>
+    <div style="text-align: center;">
+      <h1>{{ title }}</h1>
+    </div>
+    <div>
+      <form [formGroup]="userForm">
+        <div>
+          <div style="display: flex">
+            <mat-form-field style="width: 50%; margin: 10px" appearance="fill">
+              <mat-label>Nombres</mat-label>
+              <input type="text" matInput formControlName="name" />
+              <mat-error *ngIf="error.name.errors"><span *ngIf="error.name.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+              <mat-error *ngIf="error.name.errors"><span>¡Advertencia! Se requieren más de 3 caracteres*</span></mat-error>
+            </mat-form-field>
+  
+            <mat-form-field style="width: 50%; margin: 10px" appearance="fill">
+              <mat-label>Apellidos</mat-label>
+              <input type="text" matInput formControlName="last_name" />
+              <mat-error *ngIf="error.last_name.errors"><span *ngIf="error.last_name.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+              <mat-error *ngIf="error.last_name.errors"><span>¡Advertencia! Se requieren más de 3 caracteres*</span></mat-error>
+            </mat-form-field>
+          </div>
+  
+          <div style="display: flex">
+            <mat-form-field
+              class="col-5"
+              appearance="fill"
+              style="width: 40%; margin: 10px"
+            >
+              <mat-label>Tipo de identificacion</mat-label>
+              <mat-select formControlName="type_identification_id">
+                <mat-option
+                  *ngFor="let type of typeIdentification"
+                  [value]="type.id"
+                >
+                  {{ type.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="error.type_identification_id.errors"><span *ngIf="error.type_identification_id.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+            </mat-form-field>
+  
+            <mat-form-field style="width: 60%; margin: 10px" appearance="fill">
+              <mat-label>Número de identificación</mat-label>
+              <input type="number" matInput formControlName="identification" />
+              <mat-error *ngIf="error.identification.errors"><span *ngIf="error.identification.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+              <mat-error *ngIf="error.identification.errors"><span>¡Advertencia! Se requieren más de 3 números*</span></mat-error>
+            </mat-form-field>
+          </div>
+          <div style="margin: 10px">
+            <mat-form-field
+            appearance="fill"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <mat-label>Ciudad de nacimiento</mat-label>
+            <mat-select formControlName="cities">
+              <mat-option
+                *ngFor="let type of cities"
+                [value]="type.id"
+              >
+                {{ type.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="error.type_identification_id.errors"><span *ngIf="error.type_identification_id.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+          </mat-form-field>
+          
+            <mat-form-field style="width: 100%; margin-top: 10px;" appearance="fill">
+              <mat-label>Fecha de nacimiento</mat-label>
+              <input type="date" matInput formControlName="birth_date" />
+              <mat-error *ngIf="error.birth_date.errors"><span *ngIf="error.birth_date.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%; margin-top: 10px;" appearance="fill">
+              <mat-label>Correo electrónico</mat-label>
+              <input type="text" matInput formControlName="email" />
+              <mat-error *ngIf="error.email.errors"><span *ngIf="error.email.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+              <mat-error *ngIf="error.email.email"><span>¡Advertencia! Correo no valido*</span></mat-error>
+            </mat-form-field>
+  
+            <mat-form-field style="width: 100%; margin-top: 10px;" appearance="fill">
+              <mat-label>Nombre de usuario</mat-label>
+              <input type="text" matInput formControlName="username" />
+              <mat-error *ngIf="error.username.errors"><span *ngIf="error.username.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+              <mat-error *ngIf="error.username.errors"><span>¡Advertencia! Se requieren más de 3 caracteres*</span></mat-error>
+            </mat-form-field>
+  
+            <mat-form-field style="width: 100%; margin-top: 10px;" appearance="fill">
+              <mat-label>Contraseña</mat-label>
+              <input type="password" matInput formControlName="password" />
+              <mat-error *ngIf="error.password.errors"><span *ngIf="error.password.errors.required">¡Advertencia! Campo requerido*</span></mat-error>
+              <mat-error *ngIf="error.password.errors"><span>¡Advertencia! Se requieren más de 3 caracteres*</span></mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: center">
+          <button
+            mat-raised-button
+            color="primary"
+            class="btn-detalle btn-hover-raised"
+            (click)="saveUser()"
+            [disabled]="userForm.invalid"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>
+
